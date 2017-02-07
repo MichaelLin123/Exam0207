@@ -1,0 +1,16 @@
+<ul>
+<% @messages.each do |message| %>
+  <li>
+ 	  <%= message.test %>
+    <% Time.zone = "Taipei" %>
+    <%= message.updated_at%>
+  </li>
+<% end %>
+<%= form_for @message, :url => { :controller => 'messages', :action => 'create', :id => @message} do |f| %>
+
+  <%= f.label :test, "新增留言" %>
+  <%= f.text_area :test %>
+
+<%= f.submit "create" %>
+<% end %>
+</ul>

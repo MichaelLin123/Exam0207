@@ -1,13 +1,14 @@
 <ul>
 <% @events.each do |event| %>
   <li>
- 	  <%= event.title %>
+ 	  <%= link_to event.title, :controller => 'events', :action => 'show', :id => event %>
+    <% Time.zone = "Taipei" %>
     <%= event.updated_at%>
-    <%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
+    <%= link_to 'Message', :controller => 'messages', :action => 'index' %>
     <%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
     <%= link_to 'Delete', :controller => 'events', :action => 'destroy', :id => event %>
   </li>
 <% end %>
 </ul>
 <%= paginate @events %>
-<%= link_to t("admin.event"), :controller => 'events', :action => 'new' %>
+<%= link_to I18n.t(:event), :controller => 'events', :action => 'new' %>

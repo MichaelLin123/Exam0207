@@ -22,6 +22,7 @@
 en:
   hello_world: 求物資
   source: 求物資
+  event: 張貼災情訊息
   admin:
     event: 張貼災情訊息
   admin:
