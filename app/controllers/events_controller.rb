@@ -16,6 +16,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @page_title = @event.title
   end
 
   def edit
