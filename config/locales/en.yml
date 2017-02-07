@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello_world: 求物資
+  source: 求物資
+  admin:
+    event: 張貼災情訊息
+  admin:
+    info: 快報資訊
+  source: 求物資
+  help: 求救

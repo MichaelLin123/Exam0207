@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, :only => [ :show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [ :new, :edit, :update, :destroy]
   def index
     @events = Event.all
     @events = Event.page(params[:page]).per(5)
@@ -33,6 +34,10 @@ class EventsController < ApplicationController
     @event.destroy
 
     redirect_to :action => :index
+  end
+
+  def event_params
+	   params.require(:event).permit(:name, :description, :category_id)
   end
 
   private
